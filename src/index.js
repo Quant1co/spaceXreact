@@ -1,15 +1,9 @@
-import * as d3 from "d3"
-import * as Geo from "./geo.json"
+import { createRoot } from "react-dom/client";
+import { LaunchDashboard } from "./components/app";
 
-import {React} from 'react'
-import ReactDOM from 'react-dom/client'
-import {App} from "./components/app";
-
-document.addEventListener("DOMContentLoaded", setup)
-
-function setup(){
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    const element = <App />;
-    root.render(element);
-
+function mountLaunchDashboard() {
+    const dashboardRoot = createRoot(document.getElementById("root"));
+    dashboardRoot.render(<LaunchDashboard />);
 }
+
+document.addEventListener("DOMContentLoaded", mountLaunchDashboard);
